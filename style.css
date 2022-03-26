@@ -1,0 +1,18 @@
+
+:root {
+  --color-primary-1: rgb(249, 210, 50);
+  --color-primary-2: rgb(245, 165, 49);
+  --color-primary-3: rgb(241, 125, 48);
+  --color-primary-4: rgb(238, 91, 48);
+  --color-primary-5: rgb(237, 70, 47);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  
+}
