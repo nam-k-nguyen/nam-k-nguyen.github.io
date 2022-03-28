@@ -127,6 +127,9 @@ article {
   color: var(--color-primary-1);
   margin: 0 0 5px 0;
 }
+#technical-skills > article > i:hover {
+  color: var(--color-primary-1);
+}
 
 /**********/
 /* FOOTER */
