@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <g class="layer">
+  <title>Layer 1</title>
+  <polygon fill="#ffffff" id="down_tri" points="250,430 94.11541748046875,160 405.88457107543945,160 250,430 " stroke="#000000" stroke-width="7"/>
+  <rect fill="#ff0000" height="90" id="svg_1" rx="90" ry="90" stroke="#000000" stroke-width="5" transform="matrix(1 0 0 1 0 0)" width="90" x="205" y="25"/>
+  <rect fill="#bfbfbf" height="90" id="svg_2" rx="90" ry="90" stroke="#000000" stroke-width="5" transform="matrix(1 0 0 1 0 0)" width="90" x="49.11542" y="295"/>
+  <rect fill="#000000" height="90" id="svg_3" rx="90" ry="90" stroke="#000000" stroke-width="5" width="90" x="360.88457" y="295"/>
+  <polygon fill="#ffffff" id="up_tri" points="250,70 94.11541748046875,340 405.88457107543945,340 250,70 " stroke="#000000" stroke-width="0" transform="matrix(1 0 0 1 0 0)"/>
+ </g>
+</svg>
