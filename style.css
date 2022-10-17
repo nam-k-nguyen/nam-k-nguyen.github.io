@@ -20,8 +20,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Courier New', Courier, monospace;
-  transition: 1s;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
+  transition: 0.5s;
+  outline: 1px solid greenyellow !important;
 }
 
 /********/
@@ -29,136 +31,244 @@
 /********/
 
 body {
-  background: var(--color-bg-1);
-  background: var(--color-dark-1);
+  background: skyblue;
+  position: relative;
+  overflow: hidden;
+  margin: 0; padding: 0;
+  height: 100vh; width: 100vw;
+  color: white;
 }
 
-/**********/
-/* HEADER */
-/**********/
+/*****************/
+/* CONTROL PANEL */
+/*****************/
 
-header {
-  top: 0;
-  position: sticky;
-  height: 10vh;
-  background: var(--color-dark-4);
-  min-height: 60px;
-}
-nav {
-  height: 100%;
+#overlay-panel {
+  position: fixed;
   display: flex;
-  justify-content: stretch;
   align-items: center;
+  justify-content: flex-end;
+  height: max-content;
+  width: 100vw;
+  z-index: 2;
 }
-header .link-container {
+#overlay-panel > div.dropdown {
+  display: flex;
+  align-items: center;
+  visibility: visible;
+  padding: 20px;
+  font-size: 2em;
+}
+#nav-bar {
+  display: none;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  height: max-content;
+}
+#nav-bar.show {
+  display: flex;
+}
+#nav-bar > div {
+  position: relative;
+  text-transform: uppercase;
+  width: max-content;
+  padding: 0 5px 0 5px;
+  margin: 20px 0 20px 0;
+  font-size: 1.2em;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+#nav-bar > div > i {
+  margin: 0 4px 0 2px;
+  color: var(--color-primary-5);
+}
+#nav-bar > div::after {
+  position: absolute;
+  left: 50%;
+  transition: 0.5s;
+  transform: translate(-50%, 4px);
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #F26430;
+  display: block;
+}
+#nav-bar > div:hover::after {
+  content: '';
+  transform: translate(-50%, 12px);
+  width: 80%;
+  height: 3px;
+  background: #F26430;
+  display: block;
+}
+
+/********/
+/* GRID */
+/********/
+
+#master-grid {
+  position: absolute;
+  display: grid;
+  filter: blur(0px);
+  grid-template-areas:
+  "g1 g2 g3"
+  "g4 g5 g6"
+  "g7 g8 g9";
+  overflow: hidden;
+  height: 300vh;
+  width: 300vw;
+  z-index: 1;
+  transform: translateX(calc(-100%/3)) translateY(calc(-100%/3));
+}
+#master-grid > section {
+  height: 100vh;
+  width: 100vw;
   display: grid;
   place-items: center;
-  flex: 1;
+  overflow: hidden;
 }
-header a {
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--color-primary-1);
-  background: var(--color-dark-3);
-  border-radius: 1.5rem;
-  transition: 0.25s;
+#grid-1 {
+  background: var(--color-primary-1);
+  grid-area: g1;
 }
-header a:hover {
-  color: var(--color-primary-2);
-  padding: 0.5rem 2rem;
+#grid-2 {
+  background: var(--color-primary-2);
+  grid-area: g2;
 }
-
-/********/
-/* MAIN */
-/********/
-
-section {
-  border-radius: 5px;
-  margin: 1rem 1rem;
-  padding: 1rem;
-  background: var(--color-dark-3);
-}
-
-/* TITLE */
-
-.section-title {
-  width: max-content;
-  padding: 10px;
+#grid-3 {
   background: var(--color-primary-3);
-  color: white;
-  border-radius: 20px 20px 20px 20px; 
-  display: flex;
-  align-items: center;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  cursor: default;
+  grid-area: g3;
+}
+#grid-4 {
+  background: var(--color-primary-4);
+  grid-area: g4;
 }
 
-.title-icon {
-  height: 20px;
-  padding: 5px;
+/**********/
+/* GRID 5 */
+/**********/
+
+#grid-5 {
+  background-image: url("/assets/images/christopher-gower-min.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  color: white;
+}
+#grid-5 > .overlay {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: rgba(35, 31, 31, 0.75);
+}
+#grid-5 > .overlay > .text-content {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 2em 0;
+  padding: 30px;
+}
+#grid-5 > .overlay > .text-content > .line-1 {
+  font-size: 3em;
+  font-weight: 600;
+  text-decoration: underline 1px #F26430 ;
+  text-underline-offset: 10px;
+  text-underline-position: above;
+}
+#grid-5 > .overlay > .text-content > .line-1 > .name {
+  color: #F26430;
+}
+#grid-5 > .overlay > .text-content > .line-2 {
+  font-size: 2em;
+}
+#grid-5 > .overlay > .text-content > .line-3 {
+  font-size: 1em;
+}
+
+/**********/
+/* GRID 6 */
+/**********/
+
+#grid-6 {
+  background: rgb(36,31,31);
+  grid-area: g6;
+}
+#grid-6 > .icons {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+#grid-6 > .icons > .icon-container > i {
+  font-size: 3em;
+}
+#grid-6 > .icons > img {
+  height: 3em;
+}
+
+/**********/
+/* GRID 7 */
+/**********/
+
+#grid-7 {
+  background: var(--color-dark-2);
+  grid-area: g7;
+}
+
+/**********/
+/* GRID 8 */
+/**********/
+
+#grid-8 {
+  background: var(--color-dark-3);
+  grid-area: g8;
+}
+#grid-8 > div {
+  width: 100px;
+  height: 100px;
   display: grid;
   place-items: center;
   background: white;
-  color: var(--color-primary-3);
-  border-radius: 10px;
+  border-radius: 100%;
+  border: solid 5px orange;
 }
-
-.title-text {  
-  margin: 0 10px 0 10px;
-  transition-delay: 0.5s;
-}
-
-/* ARTICLE */
-
-article {
-  margin: 20px 0 0 0;
-  padding: 10px;
-  background: var(--color-dark-5);
-  border-radius: 10px;
-}
-
-.article-title {
-  color: var(--color-primary-1);
-  margin: 0 0 5px 0;
-}
-#technical-skills > article > i:hover {
-  color: var(--color-primary-1);
+#grid-8 > div > img {
+  width: 80%;
+  height: 80%;
 }
 
 /**********/
-/* FOOTER */
+/* GRID 9 */
 /**********/
 
-footer {
-  min-height: 60px;
-  height: 10vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#grid-9 {
+  background: var(--color-dark-4);
+  grid-area: g9;
 }
-
-
 
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
 
-@media (max-width: 700px) {
-  
-  header {
-    height: 30vh;
-    min-width: none;
-    min-height: 150px;
+@media all and (max-width: 1000px) {
+  #master-grid.blur {
+    filter: blur(2px);
   }
-  nav {
+  #overlay-panel.background {
+    height: 100vh;
+    justify-content: flex-end;
+    background: rgba(0,0,0,0.7);
+  }
+  #nav-bar.show {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    background: rgba(41, 31, 31, 1);
+  }
+  #overlay-panel > div.dropdown {
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
 }

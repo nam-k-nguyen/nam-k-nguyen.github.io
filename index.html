@@ -7,47 +7,237 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nam Khanh Nguyen Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
     <script src="script.js" defer></script>
     <script
       src="https://kit.fontawesome.com/5c4ca1dfe4.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
   <body>
-    <div id="control-panel">
-      <div id="navigation">
-        <div class="arrow" id="left">
-          <i class="fa-solid fa-arrow-left"></i>
-        </div>
-        <div class="arrow" id="up">
-          <i class="fa-solid fa-arrow-up"></i>
-        </div>
-        <div class="arrow" id="right">
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-        <div class="arrow" id="down">
-          <i class="fa-solid fa-arrow-down"></i>
-        </div>
-        <div id="page-number"><div>5</div></div>
+    <!-- Control Panel -->
+    <div id="overlay-panel">
+      <div id="nav-bar">
+        <!-- Quick links -->
+        <div><i class="fa-solid fa-book"></i>Education</div>
+        <div><i class="fa-solid fa-briefcase"></i>Experience</div>
+        <div><i class="fa-solid fa-code"></i>Skills</div>
+        <div><i class="fa-solid fa-folder-open"></i>Project</div>
+        <div><i class="fa-solid fa-users"></i>Credits</div>
+        <div><i class="fa-solid fa-envelope"></i>Contact</div>
       </div>
+      <div class="dropdown"><i class="fa-solid fa-bars"></i></div>
     </div>
+
+    <!-- Master Grid: 3x3 -->
     <div id="master-grid">
+      <!------------->
+      <!-- Contact -->
+      <!------------->
       <section id="grid-1">1</section>
+
+      <!--------------->
+      <!-- Education -->
+      <!--------------->
       <section id="grid-2">2</section>
+
+      <!----------->
+      <!-- Blank -->
+      <!----------->
       <section id="grid-3">3</section>
+
+      <!-------------->
+      <!-- Projects -->
+      <!-------------->
       <section id="grid-4">4</section>
-      <section id="grid-5">5</section>
+
+      <!------------------>
+      <!-- Introduction -->
+      <!------------------>
+      <section id="grid-5">
+        <div class="overlay">
+          <div class="text-content">
+            <div class="line-1">Hey, I'm <span class="name">Nam</span></div>
+            <div class="line-2">
+              Software engineer & full-stack web developer
+            </div>
+            <div class="line-3">
+              I like to learn coding stuff. I make websites. I automate my daily
+              tasks and workflows.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------>
+      <!-- Skills -->
+      <!------------>
+      <!-- Organize alphabetically -->
       <section id="grid-6">
-        <div class="photos">Photos from Unsplash by<br /></div>
+        <div class="icons">
+          <div class="icon-container">
+            <i class="devicon-html5-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-css3-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-javascript-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-heroku-original"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-python-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-cplusplus-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-csharp-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-labview-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-matlab-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-visualstudio-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-github-original"></i>
+          </div>
+          <div class="icon-container"><i class="devicon-git-plain"></i></div>
+          <div class="icon-container">
+            <i class="devicon-nodejs-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-npm-original-wordmark"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-mongodb-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-nestjs-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-react-original"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-tailwindcss-plain"></i>
+          </div>
+          <div class="icon-container">
+            <i class="devicon-express-original"></i>
+          </div>
+
+          <!-- <img src="assets/svg/puppeteer.svg" /> -->
+        </div>
+      </section>
+
+      <!----------->
+      <!-- Blank -->
+      <!----------->
+      <section id="grid-7">7</section>
+
+      <!---------------->
+      <!-- Experience -->
+      <!---------------->
+      <section id="grid-8">
+        <div>
+          <img src="assets/svg/ccrl_wrap.svg" />
+        </div>
+        <div>
+          <img src="assets/svg/zapier.svg" />
+        </div>
+      </section>
+
+      <!------------->
+      <!-- Credits -->
+      <!------------->
+      <section id="grid-9">
+        <div class="photos">
+          Photos from Unsplash by<br />
+          <a
+            tabindex="-1"
+            href="https://unsplash.com/@mnelen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Anastasia Nelen</a
+          ><br />
+          <a
+            tabindex="-1"
+            href="https://unsplash.com/@syinq?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Susan Q Yin</a
+          ><br />
+          <a
+            tabindex="-1"
+            href="https://unsplash.com/@cgower?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Christopher Gower</a
+          ><br />
+          <a
+            tabindex="-1"
+            href="https://unsplash.com/@jstrippa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >James Harrison</a
+          ><br />
+        </div>
+        <div class="icons">
+          Icons provided by<br />
+          <a tabindex="-1" href="https://devicon.dev/">DevIcon</a><br />
+          <a tabindex="-1" href="https://iconscout.com/">IconScoute</a><br />
+        </div>
         <div class="copyright">
           Copyright 2022 &copy; Handmade with ❤️ by Nam Khanh Nguyen
         </div>
       </section>
-      <section id="grid-7">7</section>
-      <section id="grid-8">8</section>
-      <section id="grid-9">9</section>
     </div>
   </body>
 </html>
 
 <!-- file:///Users/buithuynga/Desktop/CO-OP/Resume%20Versions/7.%20After%20EEP%20-%20Summer%202022/Nguyen_Nam_Resume_Fall2022.pdf -->
+<!-- 
+
+  How many sections do I need?
+  
+  1 - Connection
+    LinkedIn
+    Github
+    Email
+    
+  2 - Education
+    College 
+    Major
+    Year
+    Progress on graduation
+    LinkedIn Learning Courses
+      
+  3 - Blank
+
+  4 - Projects
+    Video Conference Website
+    PAL Automation script
+
+  5 - Introduction
+    Tell people my name
+    Tell people my title
+    Tell people what I do in general
+
+  6 - Skills
+    Languages
+    Frameworks
+    Tools: Apps, Websites, etc.
+
+  7 - Blank
+
+  8 - Experience
+    Jobs
+    Volunteer experience
+
+  9 - Credits
+    Image source
+    Who made the website
+    Font
+
+ -->
