@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --a: rgb(251, 83, 7);
+    --b: rgb(252, 177, 29);
+    --c: rgb(252, 205, 36);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    transition: 0.5s ease;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    /* outline: 1px solid yellow; */
+}
+
+ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    /* text-decoration: underline; */
+}
+
+li>a {
+    font-family: 'Fira Code', monospace;
+    color: white;
+}
+
+p {
+    font-size: 1em;
+    font-weight: 300;
+    padding: 10px 0px 10px 0px;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+}
+
+button {
+    background: black;
+    border: solid 1px var(--c);
+    border-radius: 4px;
+}
+
+button > a {
+    padding: 15px 20px 15px 20px;
+    display: block;
+    color: var(--c)
+}
+
+button:hover {
+    background:rgb(252, 205, 36, 0.1);
+}
