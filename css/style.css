@@ -241,7 +241,8 @@ section {
 
 .about-image {
     height: 200px;
-    width: 220px;
+    width: 200px;
+    margin-right: 20px;
     box-sizing: border-box;
     float: left;
     position: relative;
@@ -250,6 +251,7 @@ section {
     transition-delay: 0.1s;
     opacity: 0;
     transform: translateY(50px);
+    border-radius: 5px;
 }
 
 .about-image.animated {
@@ -258,14 +260,16 @@ section {
 }
 
 .about-image>img {
-    object-fit: contain;
-    top: 0px;
-    left: 0px;
-    /* margin: 20px; */
+    width: 200px;
     height: 200px;
     position: absolute;
+    top: 0px;
+    left: 0px;
     opacity: 1;
     border-radius: 5px;
+    object-fit: cover;
+    object-position: -24px -42px;
+    scale: 1.6;
 }
 
 .about-paragraph {
@@ -437,7 +441,11 @@ section {
 }
 
 .project-link>i {
-    font-size: 3em;
+    font-size: 2em;
+}
+
+.project-link>svg {
+    font-size: 2em;
 }
 
 .project-link:hover {
