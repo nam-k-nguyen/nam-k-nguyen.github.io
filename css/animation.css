@@ -1,0 +1,68 @@
+:root {
+    --logo-animation-time: 0.3s;
+    --logo-navify-time: 1s;
+    --logo-scale: 0.2;
+
+}
+
+.to-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+    transition-delay: 0.1s;
+}
+
+.animated {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+@keyframes up-stroke {
+    0% {
+        /* opacity: 0; */
+        height: 0;
+    }
+
+    100% {
+        /* opacity: 1; */
+        height: 100%;
+    }
+}
+
+@keyframes slant-stroke {
+    0% {
+        opacity: 0;
+        transform: skewX(14.036deg) translate(calc(0px * var(--logo-scale)), -100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: skewX(14.036deg) translate(0px, 0px);
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform: translateY(calc(-60px * var(--logo-scale)));
+        opacity: 0;
+    }
+        
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes nav-item-appear {
+    0% {
+        max-width: 0; 
+        opacity: 0;
+    }
+    
+    100% {
+        max-width: 1000;
+        opacity: 1;
+    }
+}
+

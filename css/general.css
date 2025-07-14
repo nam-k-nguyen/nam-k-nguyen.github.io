@@ -1,23 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap'); */
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('/assets/fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('/assets/fonts/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Slab';
+    src: url('/assets/fonts/JosefinSlab-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Slab';
+    src: url('/assets/fonts/JosefinSlab-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+}
 
 :root {
     --a: rgb(251, 83, 7);
     --b: rgb(252, 177, 29);
     --c: rgb(252, 205, 36);
+    --a2: hsl(19, 92%, 28%);
+    --b2: hsl(40, 90%, 28%);
+    --c2: hsl(50, 90%, 28%);
+
+    --black1: hsla(360, 2%, 10%, 100%);
+    --black2: hsla(360, 0%, 16%, 100%);
+    --black3: hsla(360, 0%, 53%, 100%);
+
+    --nav-padding: 16px;
+    --nav-gap: 160px;
+    --nav-horizontal-margin: 140px;
+    --nav-vertical-margin: 20px;
+    --nav-height: 72px;
+
+    --colorful-gradient: linear-gradient(46deg, var(--a) 0%, var(--b) 50%, var(--c) 100%);
+    --transparent-gradient: linear-gradient(to right, transparent 0%, var(--a) 90%, var(--c) 100%);
+    --transparent-gradient-rv: linear-gradient(to left, transparent 0%, var(--a) 90%, var(--c) 100%);
+
+    --become-normal-nav-duration: 1s;
+    --lengthen-nav-duration: 1s;
+
+    
 }
 
 html {
     scroll-behavior: smooth;
+    color: white;
+    font-family: 'Josefin Sans', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    body {
+
+        width: 100vw;
+        overflow: auto;
+        background: var(--black1);
+    }
 }
 
 * {
     padding: 0px;
     margin: 0px;
-    transition: 0.5s ease;
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    /* outline: 1px solid yellow; */
+    box-sizing: border-box;
 }
 
 ol {
@@ -26,18 +86,13 @@ ol {
 
 a {
     text-decoration: none;
-    /* text-decoration: underline; */
-}
-
-li>a {
-    font-family: 'Fira Code', monospace;
-    color: white;
+    color: unset;
 }
 
 p {
     font-size: 1em;
     font-weight: 300;
-    padding: 10px 0px 10px 0px;
+    /* padding: 10px 0px 10px 0px; */
     letter-spacing: 0.5px;
     line-height: 24px;
 }
@@ -45,15 +100,134 @@ p {
 button {
     background: black;
     border: solid 1px var(--c);
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
-button > a {
+button>a {
     padding: 15px 20px 15px 20px;
     display: block;
     color: var(--c)
 }
 
 button:hover {
-    background:rgb(252, 205, 36, 0.1);
+    background: rgb(252, 205, 36, 0.1);
+}
+
+.big-heading {
+    font-size: clamp(40px, 8vw, 80px)
+}
+
+
+/* Reusable */
+
+a.gradient-button {
+    border: var(--c) 1px solid;
+    border-radius: 6px;
+    background: var(--colorful-gradient);
+    padding: 8px;
+    box-shadow: 0px 2px 1px 0px var(--a),
+        inset 0px 1px 1px 0px white;
+
+    font-size: 20px;
+    color: black;
+    display: grid;
+    place-items: center;
+    transition: 0.2s;
+
+    svg {
+        fill: black;
+        width: 20px;
+        height: 20px;
+    }
+
+    transition: 0.2s;
+    &:hover {
+        transform: translateY(3px);
+    }
+}
+
+a:hover {
+    transition: 0.5s;
+}
+
+
+a.skill {
+    background: transparent;
+    position: relative;
+    
+    &.big-container {
+        background: black;
+        width: 100px;
+        height: 100px;
+        border-radius: 15px;
+        margin: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        i, svg {
+            top: 20px;
+        }
+
+        .skill-name {
+            position: absolute;
+            bottom: 20px;
+        }
+    }
+
+    i, svg {
+        transition: 0.4s;
+        position: absolute;
+        color: var(--black3);
+        opacity: 1;
+        
+        &.colored {
+            opacity: 0;
+        }
+    }
+
+}
+
+a.skill:hover {
+    color: unset;
+    background: transparent;
+    
+    &.big-container {
+        background: white;
+        color: black;
+    }
+
+    i, svg {
+        opacity: 0;
+        
+        &.colored {
+            opacity: 1;
+        }
+    }
+}
+
+.gradient-text {
+    background: var(--colorful-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blackbox {
+    background: var(--black2);
+    border: 1px solid hsla(0, 0%, 100%, 6%);
+    box-shadow:
+        inset 0px 2px 2px 0px hsla(0, 0%, 100%, 18%),
+        inset 0px 0.5px 0px 0px hsla(0, 0%, 100%, 50%),
+        0px 4px 4px 0px hsla(0, 0%, 0%, 50%);
+}
+
+/*  */
+
+h2 {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
 }
